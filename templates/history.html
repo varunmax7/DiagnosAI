@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symptom Tracker</title>
+    <style>
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #f1f8ff);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        h1 {
+            color: #0077cc;
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #e3f2fd;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 1.05em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            background: linear-gradient(135deg, #00bcd4, #2196f3);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+        a:hover {
+            background: linear-gradient(135deg, #2196f3, #00bcd4);
+            transform: scale(1.05);
+        }
+        .empty {
+            font-style: italic;
+            color: #555;
+        }
+        .advice {
+            margin-top: 30px;
+            background: #f1f8ff;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .advice h3 {
+            margin-bottom: 10px;
+            color: #0077cc;
+        }
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+        .delete-btn:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>📈 Symptom Trends</h1>
+
+    {% if trends %}
+        <ul>
+        {% for symptom, count in trends.items() %}
+            <li>
+                <strong>{{ symptom.title() }}</strong> — <span>{{ count }} times</span>
+                <form action="{{ url_for('delete_symptom', symptom=symptom) }}" method="POST" style="display: inline;">
+                    
+                </form>
+            </li>
+        {% endfor %}
+        </ul>
+
+        <div class="advice">
+            <h3>🔍 Consultation Alert!</h3>
+
+            {% if trends.get('fever', 0) > 2 %}
+                <p>Since you've reported fever multiple times, ensure you stay hydrated and monitor your temperature. If the fever persists for more than 3 days, it's a good idea to consult a healthcare professional.</p>
+            {% endif %}
+
+            {% if trends.get('cough', 0) > 2 %}
+                <p>Your recurring cough could indicate a viral infection. Try using cough syrup and staying hydrated. If symptoms worsen, consider seeing a doctor.</p>
+            {% endif %}
+
+            {% if trends.get('headache', 0) > 3 %}
+                <p>Your headache occurrences may be stress-related. Ensure you're getting enough rest, and try reducing screen time. If this persists, a medical consultation may be required.</p>
+            {% endif %}
+
+    {% else %}
+        <p class="empty">No trends found yet. Start tracking your symptoms!</p>
+    {% endif %}
+
+    <a href="/">🏠 Back to Home</a>
+</div>
+
+</body>
+</html>

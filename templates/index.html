@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Healthcare Symptom Checker</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #0077cc;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #0056b3;
+            font-size: 1em;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #0077cc;
+            box-shadow: 0 0 8px rgba(0, 119, 204, 0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #00bcd4, #2196f3);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #2196f3, #00bcd4);
+            transform: scale(1.03);
+        }
+
+        .error {
+            color: #e53935;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .success {
+            color: #43a047;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        ul li {
+            background: #e3f2fd;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 0.95em;
+        }
+
+        hr {
+            margin: 30px 0;
+            border: none;
+            height: 1px;
+            background: #ccc;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #0077cc;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .links a:hover {
+            color: #0056b3;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            const symptoms = document.forms["symptomForm"]["symptoms"].value.trim();
+            const saveLog = document.forms["symptomForm"]["save_log"].value.trim();
+
+            if (!symptoms || !saveLog) {
+                alert("Please fill out all fields correctly.");
+                return false;
+            }
+            if (saveLog.toLowerCase() !== "yes" && saveLog.toLowerCase() !== "no") {
+                alert("Save log must be 'yes' or 'no'.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🩺 AI Symptom Checker</h1>
+
+        <form method="POST" name="symptomForm" onsubmit="return validateForm()">
+            <label for="symptoms">Describe your symptoms:</label>
+            <input type="text" name="symptoms" id="symptoms" placeholder="e.g., I have a fever and sore throat" required>
+
+            <label for="save_log">Save this log? (yes/no):</label>
+            <input type="text" name="save_log" id="save_log" placeholder="yes or no" required>
+
+            <button type="submit">🔎 Analyze Symptoms</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if output %}
+            <h2 style="margin-top: 30px;">{{ output.issue }}</h2>
+            <ul>
+                {% for symptom, remedy in output.suggestions %}
+                    <li><strong>{{ symptom.title() }}:</strong> {{ remedy }}</li>
+                {% endfor %}
+            </ul>
+            <p style="margin-top: 15px;">{{ output.advice }}</p>
+            {% if output.log %}
+                <p class="success">{{ output.log }}</p>
+            {% endif %}
+        {% endif %}
+
+        <hr>
+
+        <div class="links">
+            <a href="/history">📊 Daily Tracker</a>
+            <a href="/research">📚 Disease Research</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Symptom Logs</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .log-container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .log-entry {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+        .timestamp {
+            color: #888;
+            font-size: 0.9em;
+        }
+        .username {
+            font-weight: bold;
+            color: #555;
+        }
+        .symptoms {
+            margin-top: 5px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <h1>📄 Symptom Logs</h1>
+    <div class="log-container">
+        {% if logs %}
+            {% for log in logs %}
+                <div class="log-entry">
+                    <div class="timestamp">{{ log.timestamp }}</div>
+                    <div class="username">{{ log.username }}</div>
+                    <div class="symptoms">Symptoms: {{ log.symptoms }}</div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No logs found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

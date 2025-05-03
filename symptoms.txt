@@ -1,0 +1,92 @@
+2025-04-26 06:18:47.383250 - fever
+2025-04-26 06:26:31.924790 - guest: fever
+2025-04-26 06:28:32.603783 - guest: fever
+2025-04-26 06:29:09.911386 - guest: cough
+2025-04-26 06:29:45.496761 - guest: fever
+2025-04-26 06:31:26.339533 - guest: i have fever, cough
+2025-04-26 06:32:04.305867 - guest: i have fever and, cough
+2025-04-26 06:33:05.748257 - guest: fever
+2025-04-26 06:37:45.005910 - guest: fever, cough
+2025-04-26 06:38:03.740338 - guest: fever, cough
+2025-04-26 06:38:14.906693 - guest: fever, cough
+2025-04-26 06:38:36.991214 - guest: fever, cough
+2025-04-26 06:38:45.930129 - guest: fever, cough
+2025-04-26 06:38:58.716114 - guest: fever, cough
+2025-04-26 06:39:26.540457 - guest: fever, cough
+2025-04-26 06:39:33.619778 - guest: fever, cough
+2025-04-26 06:39:43.270941 - guest: fever, cough
+2025-04-26 06:39:53.736919 - guest: fever
+2025-04-26 06:42:08.192359 - guest: fever, cough
+2025-04-26 06:46:41.474409 - guest: fever
+2025-04-26 06:47:51.259840 - guest: headache, cough
+2025-04-26 06:54:05.868771 - guest: cough
+2025-04-26 06:54:26.783599 - guest: cough
+2025-04-26 07:01:31.527038 - guest: i have a fever
+2025-04-26 07:10:36.783063 - guest: i have fever and cough
+2025-04-26 07:10:57.974819 - guest: i have a fever and cough
+2025-04-26 07:11:39.235681 - guest: fever
+2025-04-26 07:12:02.322052 - guest: i have fever and cough
+2025-04-26 07:14:09.929975 - guest: fever
+2025-04-26 07:17:20.037714 - guest: fever
+2025-04-26 07:17:30.760738 - guest: fever
+2025-04-26 07:19:04.307315 - guest: fever
+2025-04-26 07:19:35.267826 - guest: i have fever and cough
+2025-04-26 07:26:26.047380 - guest: i have fever and cough
+2025-04-26 07:27:05.203914 - guest: i have fever and cough
+2025-04-26 07:28:54.346635 - guest: cough
+2025-04-26 07:29:10.683800 - guest: i have fever and cough
+2025-04-26 07:34:37.667040 - guest: fever
+2025-04-26 07:39:03.862713 - guest: i have fever and cough
+2025-04-26 07:42:45.966458 - guest: fever
+2025-04-26 07:55:11.454702 - guest: i have fever
+2025-04-26 08:04:15.978739 - guest: i have fever
+2025-04-26 08:06:01.875322 - guest: i have fever
+2025-04-26 08:08:24.768913 - guest: i have fever
+2025-04-26 08:10:42.841101 - guest: i have fever
+2025-04-26 08:11:18.677437 - guest: i have fever
+2025-04-26 08:11:51.656611 - guest: i have fever
+2025-04-26 08:11:57.847864 - guest: fever
+2025-04-26 08:12:27.427617 - guest: fever and cough and periods
+2025-04-26 08:12:46.474427 - guest: fever and periods
+2025-04-26 08:13:12.439320 - guest: fever and period cramps
+2025-04-26 08:13:44.835154 - guest: fever and body pains and period cramps and headache
+2025-04-26 08:15:44.564610 - guest: fever and body pains and period cramps and headache
+2025-04-26 08:17:41.540180 - guest: fever and body pains and period cramps and headache
+2025-04-26 08:17:54.765631 - guest: fever
+2025-04-26 08:18:40.789659 - guest: i have fever and cough and headache and cold
+2025-04-26 08:41:29.064894 - guest: fever and cough
+2025-04-26 08:44:19.741606 - guest: fever and cough
+2025-04-26 08:52:21.578287 - guest: i have fever and cough
+2025-04-26 08:53:58.882687 - guest: fever
+2025-04-26 08:54:21.074245 - guest: i have fever, cold, headache
+2025-04-26 08:57:20.080801 - guest: i have fever, cold, headache
+2025-04-26 08:57:27.793640 - guest: cough
+2025-04-26 09:08:45.945533 - guest: fever
+2025-04-26 09:08:52.189037 - guest: fever
+2025-04-26 09:08:58.720892 - guest: fever
+2025-04-26 09:11:25.221592 - guest: i have fever and cough and headache
+2025-04-26 09:21:43.083972 - guest: fever
+2025-04-26 09:42:00.327274 - guest: fever
+2025-04-26 09:42:37.352123 - guest: i have fever and cough and headache
+2025-04-26 09:49:39.145556 - guest: headache
+2025-04-26 09:57:10.475342 - guest: fever
+2025-04-26 09:58:48.949247 - guest: headache
+2025-04-26 09:58:53.794387 - guest: headache
+2025-04-26 09:58:59.124547 - guest: headache
+2025-04-26 09:59:04.276761 - guest: headache
+2025-04-26 09:59:09.218766 - guest: headache
+2025-04-26 09:59:13.615647 - guest: headache
+2025-04-26 09:59:19.244538 - guest: headache
+2025-04-26 09:59:34.066414 - guest: headache
+2025-04-26 09:59:38.256249 - guest: headache
+2025-04-26 09:59:41.967715 - guest: headache
+2025-04-26 09:59:45.613713 - guest: headache
+2025-04-26 09:59:49.160252 - guest: headache
+2025-04-26 09:59:52.575676 - guest: headache
+2025-04-26 09:59:56.175625 - guest: headache
+2025-04-26 10:04:58.761564 - guest: i have fever and cough
+2025-04-26 10:06:37.001712 - guest: fever
+2025-04-26 10:07:57.488574 - guest: fever
+2025-04-26 10:09:08.108265 - guest: i have fever and cough and headache
+2025-04-26 10:13:16.484303 - guest: i have fever
+2025-04-26 10:21:28.005486 - guest: fever

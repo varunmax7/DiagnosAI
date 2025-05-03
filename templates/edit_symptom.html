@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Symptom</title>
+    <style>
+        /* Same styles as in the history.html for consistency */
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #f1f8ff);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            color: #0077cc;
+            margin-bottom: 30px;
+        }
+        .input-field {
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 1em;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 14px 25px;
+            background: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background: #2196f3;
+            transform: scale(1.05);
+        }
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            background: linear-gradient(135deg, #00bcd4, #2196f3);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        a:hover {
+            background: linear-gradient(135deg, #2196f3, #00bcd4);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Edit Symptom</h1>
+
+    <form method="POST" action="/update_symptom">
+        <input type="hidden" name="symptom" value="{{ symptom }}">
+        <label for="new_count">New Count for {{ symptom.title() }}:</label>
+        <input type="number" class="input-field" name="new_count" id="new_count" value="{{ trends[symptom] }}" required>
+
+        <button type="submit">Update Symptom</button>
+    </form>
+
+    <a href="/history">Back to History</a>
+</div>
+
+</body>
+</html>
